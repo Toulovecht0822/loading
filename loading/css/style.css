@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+  font-family: Titillium Web, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: url(../bg.jpeg) top center no-repeat #121025;
+  background-size: cover;
+}
+
+.loading-main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 99999;
+}
+
+.loading-box {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-logo img {
+  width: 220px;
+  display: flex;
+}
+
+.loading-animation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 60px;
+  letter-spacing: 2px;
+  margin: 20px 0 5px;
+}
+
+.loading-animation div {
+  animation: blur-text 4.6s infinite ease-in-out;
+  opacity: 0;
+}
+
+.loading-animation div:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.loading-animation div:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.loading-animation div:nth-child(4) {
+  animation-delay: 0.9s;
+}
+
+.loading-animation div:nth-child(5) {
+  animation-delay: 1.2s;
+}
+
+.loading-animation div:nth-child(6) {
+  animation-delay: 1.5s;
+}
+
+.loading-animation div:nth-child(7) {
+  animation-delay: 1.8s;
+}
+
+@keyframes blur-text {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  
+  5% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+
+  55% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scaleY(1);
+  }
+
+  65% {
+    transform: scaleY(1.2);
+    filter: blur(10px);
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
+.progress-bar {
+  position: relative;
+  width: 80vw;
+  max-width: 380px;
+  height: 5px;
+  border-radius: 30px;
+  background-color: #000;
+}
+
+.progress-bar .progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  color: white;
+  border-radius: 30px;
+  background: #1f00a2;
+  background: linear-gradient(90deg, #b322ff, #1f00a2, #23d5ab, #b322ff, #1f00a2);
+  background-size: 400% 100%;
+  animation: bgcolor 8s cubic-bezier(0.1, 0.3, 0.9, 0.7) infinite;
+  transition: width .5s linear;
+}
+
+@keyframes bgcolor {
+  0% {
+    background-position: 100% 0%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .loading-flex {
+    zoom: 0.7;
+  }
+}
